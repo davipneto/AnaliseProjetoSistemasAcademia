@@ -53,10 +53,6 @@ public class ConsultaProfessor extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField1");
-
         jLabel2.setText("CPF");
 
         jLabel1.setText("Nome");

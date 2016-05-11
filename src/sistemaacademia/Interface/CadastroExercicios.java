@@ -65,8 +65,6 @@ public class CadastroExercicios extends javax.swing.JFrame {
 
         jLabel1.setText("Exercício nome");
 
-        jTextField1.setText("jTextField1");
-
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
