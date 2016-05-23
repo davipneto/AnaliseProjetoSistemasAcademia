@@ -188,14 +188,15 @@ public class FichaDeExercicios extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoCadastrar)
-                    .addComponent(botaoExcluir)
-                    .addComponent(botaoAlterar)
-                    .addComponent(botaoImprimir)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(botaoCadAluno)
-                        .addComponent(botaoJanela)))
+                        .addComponent(botaoJanela))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(botaoCadastrar)
+                        .addComponent(botaoExcluir)
+                        .addComponent(botaoAlterar)
+                        .addComponent(botaoImprimir)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -270,7 +271,7 @@ public class FichaDeExercicios extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoJanelaActionPerformed
 
     private void botaoCadAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadAlunoActionPerformed
-        new CadCliente().show();
+        new CadastroCliente().show();
         dispose();
     }//GEN-LAST:event_botaoCadAlunoActionPerformed
 

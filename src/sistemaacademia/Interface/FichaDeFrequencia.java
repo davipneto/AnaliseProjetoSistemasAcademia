@@ -196,7 +196,7 @@ public class FichaDeFrequencia extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoImprimirActionPerformed
 
     private void botaoCadAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadAlunoActionPerformed
-         new CadCliente().show();
+         new CadastroCliente().show();
         dispose();
     }//GEN-LAST:event_botaoCadAlunoActionPerformed
 

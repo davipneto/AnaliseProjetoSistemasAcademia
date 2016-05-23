@@ -177,15 +177,16 @@ public class Turmas extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotaoCadastrar)
-                    .addComponent(BotaoExcluir)
-                    .addComponent(botaoConsultar)
-                    .addComponent(botaoAlterar)
-                    .addComponent(botaoNovo)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(botaoCadAluno)
-                        .addComponent(botaoJanela)))
+                        .addComponent(botaoJanela))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(BotaoCadastrar)
+                        .addComponent(BotaoExcluir)
+                        .addComponent(botaoConsultar)
+                        .addComponent(botaoAlterar)
+                        .addComponent(botaoNovo)))
                 .addGap(14, 14, 14)
                 .addComponent(jLabel1)
                 .addGap(9, 9, 9)
@@ -247,7 +248,7 @@ public class Turmas extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoNovoActionPerformed
 
     private void botaoCadAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadAlunoActionPerformed
-        new CadCliente().show();
+        new CadastroCliente().show();
         dispose();
     }//GEN-LAST:event_botaoCadAlunoActionPerformed
 

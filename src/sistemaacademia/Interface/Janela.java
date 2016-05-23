@@ -324,7 +324,7 @@ public class Janela extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        CadProfessor cadProfessor = new CadProfessor();
+        CadastroProfessor cadProfessor = new CadastroProfessor();
         cadProfessor.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -359,21 +359,21 @@ public class Janela extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-          ConsultaSecretario consultarSec = new ConsultaSecretario();
+        ConsultaSecretario consultarSec = new ConsultaSecretario();
         consultarSec.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        CadCliente cadCliente = new CadCliente();
-        cadCliente.setVisible(true);
+        CadastroCliente newCadCliente = new CadastroCliente();
+        newCadCliente.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        CadSecretario cadSecretario = new CadSecretario();
+        CadastroSecretario cadSecretario = new CadastroSecretario();
         cadSecretario.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
