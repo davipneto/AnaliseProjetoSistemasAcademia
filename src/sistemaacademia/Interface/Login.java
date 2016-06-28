@@ -5,6 +5,8 @@
  */
 package sistemaacademia.Interface;
 
+import sistemaacademia.Secretario;
+
 /**
  *
  * @author JessicaIsoton
@@ -139,6 +141,9 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Secretario secr = new Secretario();
+        //secr.setCpf(Long.valueOf(jTextField1.getText()));
+        //secr.setSenha(jPasswordField2.getText());
         Janela janela = new Janela();
         janela.setVisible(true);
         dispose();

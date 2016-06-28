@@ -27,6 +27,10 @@ public class Pessoa {
     private long cpf;
     private String imagem;
     private String email;
+    
+    public Pessoa(){
+        
+    }
 
     public Pessoa(String nome, String dataDeNascimento, char sexo, String estadoCivil, int telefone1, int telefone2, String endereco, int numero, String complemento, String bairro, int cep, String cidade, int rg, long cpf, String imagem, String email) {
         this.nome = nome;

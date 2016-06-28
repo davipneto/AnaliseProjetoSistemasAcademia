@@ -6,6 +6,7 @@
 package sistemaacademia.Interface;
 
 import javax.swing.JOptionPane;
+import sistemaacademia.Aluno;
 
 /**
  *
@@ -184,6 +185,11 @@ public class CadastroCliente extends javax.swing.JFrame {
         });
 
         sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino", "Outro" }));
+        sexo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sexoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -390,12 +396,64 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_emailActionPerformed
 
     private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
-        String Bairro = bairro.getText();
+        String Nome = nome.getText();
+        String CPF = cpf.getText();
+        String RG = rg.getText();
+        String Email = email.getText();
         
-        JOptionPane.showMessageDialog(null, "Aluno cadastrado.");
-        Janela janela = new Janela();
-        janela.setVisible(true);
-        dispose();
+        if(Nome.compareTo("")==0||CPF.compareTo("")==0||RG.compareTo("")==0||Email.compareTo("")==0){
+            JOptionPane.showMessageDialog(null,"Os campos Nome, RG, CPF e Email são obrigatórios");
+        }
+        else{
+            String Bairro = bairro.getText();
+            int CEP = Integer.valueOf(cep.getText());
+            long Cpf = Long.valueOf(CPF);
+            String Cidade = cidade.getText();
+            String Complemento = complemento.getText();
+            String DataCancel = dataCancelamento.getText();
+            String DataMatr = dataMatricula.getText();
+            String DataNasc = dataNascimento.getText();
+            String Endereco = endereco.getText();
+            String EstadoCivil = estadoCivil.getSelectedItem().toString();
+            String Foto = foto.getText();
+            int Matricula = Integer.valueOf(matricula.getText());
+            int Num = Integer.valueOf(num.getText());
+            int Rg = Integer.valueOf(RG);
+            int Senha = Integer.valueOf(senha.getText());
+            char Sexo = sexo.getSelectedItem().toString().charAt(0);
+            String Situacao = situacao.getText();
+            int Telefone1 = Integer.valueOf(telefone1.getText());
+            int Telefone2 = Integer.valueOf(telefone2.getText());
+            Aluno aluno = new Aluno();
+            aluno.setBairro(Bairro);
+            aluno.setCep(CEP);
+            aluno.setCidade(Cidade);
+            aluno.setComplemento(Complemento);
+            aluno.setCpf(Cpf);
+            aluno.setDataCancelamento(DataCancel);
+            aluno.setDataDeNascimento(DataNasc);
+            aluno.setDataMatricula(DataMatr);
+            aluno.setEmail(Email);
+            aluno.setEndereco(Endereco);
+            aluno.setEstadoCivil(EstadoCivil);
+            aluno.setImagem(Foto);
+            aluno.setMatricula(Matricula);
+            aluno.setNome(Nome);
+            aluno.setNumero(Num);
+            aluno.setRg(Rg);
+            aluno.setSenha(Senha);
+            aluno.setSexo(Sexo);
+            aluno.setSituacao(Situacao);
+            aluno.setTelefone1(Telefone1);
+            aluno.setTelefone2(Telefone2);
+            aluno.cadastraAluno();
+            
+            JOptionPane.showMessageDialog(null, "Aluno cadastrado.");
+            Janela janela = new Janela();
+            janela.setVisible(true);
+            dispose();
+        }
+        
     }//GEN-LAST:event_CadastrarActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
@@ -411,6 +469,10 @@ public class CadastroCliente extends javax.swing.JFrame {
     private void cepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cepActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cepActionPerformed
+
+    private void sexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sexoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sexoActionPerformed
 
     /**
      * @param args the command line arguments
