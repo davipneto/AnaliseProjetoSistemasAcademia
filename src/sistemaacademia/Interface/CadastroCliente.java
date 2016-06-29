@@ -399,9 +399,14 @@ public class CadastroCliente extends javax.swing.JFrame {
         String CPF = cpf.getText();
         String RG = rg.getText();
         String Email = email.getText();
+        String DataMatr = dataMatricula.getText().replaceAll("[^0-9]", "");
+        String DataNasc = dataNascimento.getText().replaceAll("[^0-9]", "");
+        String Senha_str = String.valueOf(senha.getPassword());
         
-        if(Nome.compareTo("")==0||CPF.compareTo("")==0||RG.compareTo("")==0||Email.compareTo("")==0){
-            JOptionPane.showMessageDialog(null,"Os campos Nome, RG, CPF e Email são obrigatórios");
+        if(Nome.compareTo("")==0||DataNasc.compareTo("")==0||DataNasc.length()!=8||
+                DataMatr.length()!=8||Senha_str.compareTo("")==0||
+                CPF.compareTo("")==0||RG.compareTo("")==0){
+            JOptionPane.showMessageDialog(null,"Verifique os campos Nome, Data de Nascimento, Telefone 1, Senha, RG, CPF, Data de Matrícula e Data de Cancelamento");
         }
         else{
             String Bairro = bairro.getText();
@@ -410,15 +415,14 @@ public class CadastroCliente extends javax.swing.JFrame {
             String Cidade = cidade.getText();
             String Complemento = complemento.getText();
             String DataCancel = dataCancelamento.getText().replaceAll("[^0-9]", "");
-            String DataMatr = dataMatricula.getText().replaceAll("[^0-9]", "");
-            String DataNasc = dataNascimento.getText().replaceAll("[^0-9]", "");
+            int Senha = Integer.valueOf(Senha_str);
             String Endereco = endereco.getText();
             String EstadoCivil = estadoCivil.getSelectedItem().toString();
             String Foto = foto.getText();
             int Matricula = Integer.valueOf(matricula.getText());
             int Num = Integer.valueOf(num.getText());
             int Rg = Integer.valueOf(RG);
-            int Senha = Integer.valueOf(String.valueOf(senha.getPassword()));
+            
             char Sexo = sexo.getSelectedItem().toString().charAt(0);
             String Situacao = situacao.getText();
             String Telefone1 = telefone1.getText().replaceAll("[^0-9]", "");

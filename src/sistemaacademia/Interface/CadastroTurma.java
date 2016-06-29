@@ -250,13 +250,18 @@ public class CadastroTurma extends javax.swing.JFrame {
         boolean Quinta = quinta.isSelected();
         boolean Sexta = sexta.isSelected();
         
-        Turma turma = new Turma(Modalidade,HoraInicio,HoraFim,Professor,MaxAlunos,Segunda,Terca,Quarta,Quinta,Sexta);
-        turma.cadastraTurma();        
+        if(Modalidade.compareTo("")==0 || HoraFim.length()!=4||HoraInicio.length()!=4)
+            JOptionPane.showMessageDialog(null,"Verifique todos os campos");
+        else{
         
-        //JOptionPane.showMessageDialog(null, "Turma Cadastrada");
-        Janela janela = new Janela();
-        janela.setVisible(true);
-        dispose();
+            Turma turma = new Turma(Modalidade,HoraInicio,HoraFim,Professor,MaxAlunos,Segunda,Terca,Quarta,Quinta,Sexta);
+            turma.cadastraTurma();        
+
+            //JOptionPane.showMessageDialog(null, "Turma Cadastrada");
+            Janela janela = new Janela();
+            janela.setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

@@ -41,7 +41,7 @@ public class Aluno extends Pessoa {
         try {
             ClassDaoAluno alunoDao = new ClassDaoAluno();
             alunoDao.incluir(this);
-            JOptionPane.showMessageDialog(null,"Cadastro Realizado Com Sucesso!");
+            JOptionPane.showMessageDialog(null,"Aluno Cadastrado");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Aluno.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -65,7 +65,7 @@ public class Aluno extends Pessoa {
         try {
             ClassDaoAluno alunoDao = new ClassDaoAluno();
             alunoDao.alterar(this);
-            JOptionPane.showMessageDialog(null,"Alteração Realizada Com Sucesso!");
+            JOptionPane.showMessageDialog(null,"Dados Alterados");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Aluno.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {

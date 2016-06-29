@@ -57,6 +57,9 @@ public class ClassDaoTurma {
         smt.setBoolean(9, turma.isQuinta());
         smt.setBoolean(10, turma.isSexta());
         smt.setInt(11, turma.getProfessor());
+        smt.executeUpdate();
+        smt.close();
+        conexao.close();
     }
     
     public void consultar (Turma turma) throws SQLException{

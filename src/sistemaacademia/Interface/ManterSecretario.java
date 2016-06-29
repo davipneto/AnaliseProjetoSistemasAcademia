@@ -369,9 +369,14 @@ public class ManterSecretario extends javax.swing.JFrame {
         String CPF = cpf.getText();
         String RG = rg.getText();
         String Email = email.getText();
+        String DataNasc = dataNascimento.getText();
+        String DataAdmissao = dataAdmissao.getText();
+        String Senha = senha.getText();
         
-        if(Nome.compareTo("")==0||CPF.compareTo("")==0||RG.compareTo("")==0||Email.compareTo("")==0){
-            JOptionPane.showMessageDialog(null,"Os campos Nome, RG, CPF e Email são obrigatórios");
+        if(Nome.compareTo("")==0||DataNasc.compareTo("")==0||DataNasc.length()!=8||
+                DataAdmissao.length()!=8||Senha.compareTo("")==0||
+                CPF.compareTo("")==0||RG.compareTo("")==0){
+            JOptionPane.showMessageDialog(null,"Verifique os campos Nome, Data de Nascimento, Data de Admissão, Telefone 1, Senha, RG e CPF");
         }
         else{
             String Bairro = bairro.getText();
@@ -379,14 +384,14 @@ public class ManterSecretario extends javax.swing.JFrame {
             long Cpf = Long.valueOf(CPF);
             String Cidade = cidade.getText();
             String Complemento = complemento.getText();
-            String DataNasc = dataNascimento.getText();
-            String DataAdmissao = dataAdmissao.getText();
+            
+            
             String Endereco = endereco.getText();
             String EstadoCivil = estadoCivil.getSelectedItem().toString();
             String Foto = foto.getText();
             int Num = Integer.valueOf(num.getText());
             int Rg = Integer.valueOf(RG);
-            String Senha = senha.getText();
+            
             char Sexo = sexo.getSelectedItem().toString().charAt(0);
             String Telefone1 = telefone1.getText();
             String Telefone2 = telefone2.getText();

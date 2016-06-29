@@ -34,7 +34,7 @@ public class Secretario extends Pessoa {
         try {
             ClassDaoSecretario secrDao = new ClassDaoSecretario();
             secrDao.incluir(this);
-            JOptionPane.showMessageDialog(null,"Cadastro Realizado Com Sucesso!");
+            JOptionPane.showMessageDialog(null,"Secretário Cadastrado");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Aluno.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -58,7 +58,7 @@ public class Secretario extends Pessoa {
         try {
             ClassDaoSecretario secrDao = new ClassDaoSecretario();
             secrDao.alterar(this);
-            JOptionPane.showMessageDialog(null,"Dados Alterados Com Sucesso!");
+            JOptionPane.showMessageDialog(null,"Dados Alterados");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Professor.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {

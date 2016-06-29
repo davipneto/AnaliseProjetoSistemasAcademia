@@ -51,7 +51,7 @@ public class Turma {
         try {
             ClassDaoTurma turmaDao = new ClassDaoTurma();
             turmaDao.incluir(this);
-            JOptionPane.showMessageDialog(null,"Cadastro Realizado Com Sucesso!");
+            JOptionPane.showMessageDialog(null,"Turma Cadastrada");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Turma.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -75,7 +75,7 @@ public class Turma {
         try {
             ClassDaoTurma turmaDao = new ClassDaoTurma();
             turmaDao.alterar(this);
-            JOptionPane.showMessageDialog(null,"Alteração Realizada Com Sucesso!");
+            JOptionPane.showMessageDialog(null,"Dados Alterados");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Turma.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
