@@ -31,8 +31,8 @@ public class ClassDaoAluno {
             smt.setString (2, aluno.getDataDeNascimento());
             smt.setString (3, String.valueOf(aluno.getSexo()));
             smt.setString (4, aluno.getEstadoCivil());
-            smt.setString (5, String.valueOf(aluno.getTelefone1()));
-            smt.setString (6, String.valueOf(aluno.getTelefone2()));
+            smt.setString (5, aluno.getTelefone1());
+            smt.setString (6, aluno.getTelefone2());
             smt.setString (7, aluno.getEndereco());
             smt.setInt    (8, aluno.getNumero());
             smt.setString (9, aluno.getComplemento());

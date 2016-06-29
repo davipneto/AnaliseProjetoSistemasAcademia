@@ -21,7 +21,7 @@ public class ClassConexao {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Conectado ao Banco!!");
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/mybd","root","6659");
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb","root","6659");
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Driver não localizado: " + ex);
             Logger.getLogger(ClassConexao.class.getName()).log(Level.SEVERE, null, ex);

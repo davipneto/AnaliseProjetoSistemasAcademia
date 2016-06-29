@@ -15,8 +15,8 @@ public class Pessoa {
     private String dataDeNascimento;
     private char sexo;
     private String estadoCivil;
-    private int telefone1;
-    private int telefone2;
+    private String telefone1;
+    private String telefone2;
     private String endereco;
     private int numero;
     private String complemento;
@@ -32,7 +32,7 @@ public class Pessoa {
         
     }
 
-    public Pessoa(String nome, String dataDeNascimento, char sexo, String estadoCivil, int telefone1, int telefone2, String endereco, int numero, String complemento, String bairro, int cep, String cidade, int rg, long cpf, String imagem, String email) {
+    public Pessoa(String nome, String dataDeNascimento, char sexo, String estadoCivil, String telefone1, String telefone2, String endereco, int numero, String complemento, String bairro, int cep, String cidade, int rg, long cpf, String imagem, String email) {
         this.nome = nome;
         this.dataDeNascimento = dataDeNascimento;
         this.sexo = sexo;
@@ -67,11 +67,11 @@ public class Pessoa {
         return estadoCivil;
     }
 
-    public int getTelefone1() {
+    public String getTelefone1() {
         return telefone1;
     }
 
-    public int getTelefone2() {
+    public String getTelefone2() {
         return telefone2;
     }
 
@@ -131,11 +131,11 @@ public class Pessoa {
         this.estadoCivil = estadoCivil;
     }
 
-    public void setTelefone1(int telefone1) {
+    public void setTelefone1(String telefone1) {
         this.telefone1 = telefone1;
     }
 
-    public void setTelefone2(int telefone2) {
+    public void setTelefone2(String telefone2) {
         this.telefone2 = telefone2;
     }
 

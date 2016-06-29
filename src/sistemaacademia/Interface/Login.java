@@ -5,6 +5,7 @@
  */
 package sistemaacademia.Interface;
 
+import javax.swing.JOptionPane;
 import sistemaacademia.Secretario;
 
 /**
@@ -141,12 +142,13 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Secretario secr = new Secretario();
-        //secr.setCpf(Long.valueOf(jTextField1.getText()));
-        //secr.setSenha(jPasswordField2.getText());
-        Janela janela = new Janela();
-        janela.setVisible(true);
-        dispose();
+        if(!"admin".equals(jTextField1.getText()) || !"admin".equals(jPasswordField2.getText()))
+            JOptionPane.showMessageDialog(null,"Combinação incorreta de Usuário e Senha");
+        else{
+            Janela janela = new Janela();
+            janela.setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

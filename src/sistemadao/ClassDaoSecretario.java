@@ -24,8 +24,8 @@ public class ClassDaoSecretario {
     
     public void incluir (Secretario aluno) throws SQLException{
         //modificar essa linha de acordo com o construido no banco de dados    
-        String sqlincluir = "insert into professor (Nome, DataNascimento, Sexo, EstadoCivil, Telefone1, Telefone2, Endereco, "
-                + "Numero, Complemento, Bairro,CEP,Cidade, RG, CPF,Imagem, email, DatadeAdmissao,Senha,)"+
+        String sqlincluir = "insert into secretario (Nome, DatadeNascimento, Sexo, EstadoCivil, Telefone1, Telefone2, Endereco, "
+                + "Numero, Complemento, Bairro,CEP,Cidade, RG, CPF,Imagem, email, DatadeAdmissao,Senha)"+
                                                       "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement smt = conexao.prepareStatement(sqlincluir);
             smt.setString (1, aluno.getNome());
