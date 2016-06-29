@@ -5,6 +5,8 @@
  */
 package sistemaacademia.Interface;
 
+import sistemaacademia.Professor;
+
 /**
  *
  * @author JessicaIsoton
@@ -98,9 +100,14 @@ public class ConsultaProfessor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOKActionPerformed
-        ManterProfessor manterProf = new ManterProfessor();
-        manterProf.setVisible(true);
-        dispose();
+        if(jRadioButton1.isSelected()){
+           Professor aluno = new Professor();
+           aluno.setCpf(Long.valueOf(jTextField1.getText()));
+           aluno.consultaProf();
+           ManterProfessor manterProf = new ManterProfessor(aluno);
+           manterProf.setVisible(true);
+           dispose();
+       }
     }//GEN-LAST:event_botaoOKActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed

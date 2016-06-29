@@ -5,6 +5,8 @@
  */
 package sistemaacademia.Interface;
 
+import sistemaacademia.Turma;
+
 /**
  *
  * @author JessicaIsoton
@@ -115,9 +117,14 @@ public class ConsultaTurma extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void botaoOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOKActionPerformed
-        ManterTurma turma = new ManterTurma();
-        turma.setVisible(true);
-        dispose();
+        if(radioCPF.isSelected()){
+           Turma turma = new Turma();
+           turma.setProfessor(Integer.valueOf(jTextField1.getText()));
+           turma.consultaTurma();
+           ManterTurma manterTurma = new ManterTurma(turma);
+           manterTurma.setVisible(true);
+           dispose();
+       }
     }//GEN-LAST:event_botaoOKActionPerformed
 
     /**

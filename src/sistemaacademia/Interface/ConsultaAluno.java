@@ -5,6 +5,8 @@
  */
 package sistemaacademia.Interface;
 
+import sistemaacademia.Aluno;
+
 /**
  *
  * @author JessicaIsoton
@@ -29,11 +31,11 @@ public class ConsultaAluno extends javax.swing.JFrame {
 
         buttonGroup2 = new javax.swing.ButtonGroup();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jValor = new javax.swing.JTextField();
         botaoOK = new javax.swing.JButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        jNome = new javax.swing.JRadioButton();
+        jMatr = new javax.swing.JRadioButton();
+        jCPF = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -47,19 +49,19 @@ public class ConsultaAluno extends javax.swing.JFrame {
             }
         });
 
-        buttonGroup2.add(jRadioButton2);
-        jRadioButton2.setText("Nome");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup2.add(jNome);
+        jNome.setText("Nome");
+        jNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                jNomeActionPerformed(evt);
             }
         });
 
-        buttonGroup2.add(jRadioButton3);
-        jRadioButton3.setText("Matrícula");
+        buttonGroup2.add(jMatr);
+        jMatr.setText("Matrícula");
 
-        buttonGroup2.add(jRadioButton1);
-        jRadioButton1.setText("CPF");
+        buttonGroup2.add(jCPF);
+        jCPF.setText("CPF");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,12 +74,12 @@ public class ConsultaAluno extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton2)
+                                .addComponent(jNome)
                                 .addGap(10, 10, 10)
-                                .addComponent(jRadioButton3)
+                                .addComponent(jMatr)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton1))
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jCPF))
+                            .addComponent(jValor, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addComponent(botaoOK, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -90,13 +92,13 @@ public class ConsultaAluno extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton1))
+                    .addComponent(jNome)
+                    .addComponent(jMatr)
+                    .addComponent(jCPF))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(botaoOK)
+                .addComponent(botaoOK, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -104,14 +106,19 @@ public class ConsultaAluno extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOKActionPerformed
-       ManterAluno manterAluno = new ManterAluno();
-       manterAluno.setVisible(true);
-       dispose();
+       if(jCPF.isSelected()){
+           Aluno aluno = new Aluno();
+           aluno.setCpf(Long.valueOf(jValor.getText()));
+           aluno.consultaAluno();
+           ManterAluno manterAluno = new ManterAluno(aluno);
+           manterAluno.setVisible(true);
+           dispose();
+       }
     }//GEN-LAST:event_botaoOKActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void jNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNomeActionPerformed
         
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_jNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,10 +158,10 @@ public class ConsultaAluno extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoOK;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JRadioButton jCPF;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JRadioButton jMatr;
+    private javax.swing.JRadioButton jNome;
+    private javax.swing.JTextField jValor;
     // End of variables declaration//GEN-END:variables
 }

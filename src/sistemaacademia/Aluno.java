@@ -48,6 +48,30 @@ public class Aluno extends Pessoa {
             Logger.getLogger(Aluno.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public void consultaAluno(){
+        try {
+            ClassDaoAluno alunoDao = new ClassDaoAluno();
+            alunoDao.consultar(this);
+            //JOptionPane.showMessageDialog(null,"Cadastro Realizado Com Sucesso!");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Aluno.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Aluno.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void alteraAluno(){
+        try {
+            ClassDaoAluno alunoDao = new ClassDaoAluno();
+            alunoDao.alterar(this);
+            JOptionPane.showMessageDialog(null,"Alteração Realizada Com Sucesso!");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Aluno.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Aluno.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public int getTurma() {
         return turma;

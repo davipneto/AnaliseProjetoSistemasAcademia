@@ -41,6 +41,30 @@ public class Secretario extends Pessoa {
             Logger.getLogger(Aluno.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public void consultaSecr(){
+        try {
+            ClassDaoSecretario secrDao = new ClassDaoSecretario();
+            secrDao.consultar(this);
+            //JOptionPane.showMessageDialog(null,"Cadastro Realizado Com Sucesso!");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Professor.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Professor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void alteraSecr(){
+        try {
+            ClassDaoSecretario secrDao = new ClassDaoSecretario();
+            secrDao.alterar(this);
+            JOptionPane.showMessageDialog(null,"Dados Alterados Com Sucesso!");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Professor.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Professor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public String getDataAdmissao() {
         return dataAdmissao;

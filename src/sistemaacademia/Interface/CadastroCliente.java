@@ -186,7 +186,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         }
 
         try {
-            cep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###-###")));
+            cep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -418,7 +418,7 @@ public class CadastroCliente extends javax.swing.JFrame {
             int Matricula = Integer.valueOf(matricula.getText());
             int Num = Integer.valueOf(num.getText());
             int Rg = Integer.valueOf(RG);
-            int Senha = Integer.valueOf(senha.getPassword().toString());
+            int Senha = Integer.valueOf(String.valueOf(senha.getPassword()));
             char Sexo = sexo.getSelectedItem().toString().charAt(0);
             String Situacao = situacao.getText();
             String Telefone1 = telefone1.getText().replaceAll("[^0-9]", "");

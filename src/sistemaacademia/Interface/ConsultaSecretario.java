@@ -5,6 +5,8 @@
  */
 package sistemaacademia.Interface;
 
+import sistemaacademia.Secretario;
+
 /**
  *
  * @author JessicaIsoton
@@ -98,9 +100,14 @@ public class ConsultaSecretario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOKActionPerformed
-        ManterSecretario manterSecr = new ManterSecretario();
-        manterSecr.setVisible(true);
-        dispose();
+        if(jRadioButton1.isSelected()){
+           Secretario aluno = new Secretario();
+           aluno.setCpf(Long.valueOf(jTextField1.getText()));
+           aluno.consultaSecr();
+           ManterSecretario manterSecr = new ManterSecretario(aluno);
+           manterSecr.setVisible(true);
+           dispose();
+       }
     }//GEN-LAST:event_botaoOKActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed

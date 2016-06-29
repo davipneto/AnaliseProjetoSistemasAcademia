@@ -7,6 +7,7 @@ package sistemadao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import sistemaacademia.Secretario;
 import sistemautilitario.ClassConexao;
@@ -52,9 +53,9 @@ public class ClassDaoSecretario {
     }
 
     public void alterar(Secretario aluno) throws SQLException{
-        String sqlalterar = "update professor set Nome=?, DataNascimento=?, Sexo=?, EestadoCivil=?, Telefone1=?, Telefone2=?,"
+        String sqlalterar = "update secretario set Nome=?, DatadeNascimento=?, Sexo=?, EstadoCivil=?, Telefone1=?, Telefone2=?,"
                 + " Endereco=?, Numero=?,Complemento=?, Bairro=?,CEP=?, Cidade=?, RG=?, CPF=?, "
-                + "Imagem=?, email=?, DatadeAdmissao=?,Senha=?, where Nome=?";
+                + "Imagem=?, email=?, DatadeAdmissao=?,Senha=? where CPF=?";
             PreparedStatement smt = conexao.prepareStatement(sqlalterar);
             smt.setString (1, aluno.getNome());
             smt.setString (2, aluno.getDataDeNascimento());
@@ -73,10 +74,36 @@ public class ClassDaoSecretario {
             smt.setString (15,aluno.getImagem());
             smt.setString (16,aluno.getEmail());
             smt.setString (17,aluno.getDataAdmissao());
-            smt.setString    (18,aluno.getSenha());
+            smt.setString (18,aluno.getSenha());
+            smt.setString (19,String.valueOf(aluno.getCpf()));
             smt.executeUpdate();
             smt.close();
             conexao.close();
+    }
+    
+    public void consultar(Secretario aluno) throws SQLException{
+        String sql = "SELECT * FROM secretario WHERE CPF=" + String.valueOf(aluno.getCpf());
+        PreparedStatement ptm = this.conexao.prepareStatement(sql);
+        ResultSet rs = ptm.executeQuery();
+        while(rs.next()){
+            aluno.setNome(rs.getString("Nome"));
+            aluno.setDataDeNascimento(rs.getString("DatadeNascimento"));
+            aluno.setSexo(rs.getString("Sexo").charAt(0));
+            aluno.setEstadoCivil(rs.getString("EstadoCivil"));
+            aluno.setTelefone1(rs.getString("Telefone1"));
+            aluno.setTelefone2(rs.getString("Telefone2"));
+            aluno.setEndereco(rs.getString("Endereco"));
+            aluno.setNumero(rs.getInt("Numero"));
+            aluno.setComplemento(rs.getString("Complemento"));
+            aluno.setBairro(rs.getString("Bairro"));
+            aluno.setCep(rs.getInt("CEP"));
+            aluno.setCidade(rs.getString("Cidade"));
+            aluno.setRg(rs.getInt("RG"));
+            aluno.setImagem(rs.getString("Imagem"));
+            aluno.setEmail(rs.getString("email"));
+            aluno.setDataAdmissao(rs.getString("DatadeAdmissao"));
+            aluno.setSenha(rs.getString("Senha"));
+        }
     }
     
 }
